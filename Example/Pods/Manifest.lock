@@ -1,0 +1,24 @@
+PODS:
+  - KFXLog (1.5.0)
+  - KFXLogUI (0.1.0):
+    - KFXLog
+
+DEPENDENCIES:
+  - KFXLog
+  - KFXLogUI (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - KFXLog
+
+EXTERNAL SOURCES:
+  KFXLogUI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KFXLog: 5f7caa83fd3f8d1f404190dd5666963eb46bf56a
+  KFXLogUI: 174a343aef33e0f9ae93234581dc2df3bc5b1c5b
+
+PODFILE CHECKSUM: 5238307b46159185e0f8ca4f8a20c650376ef300
+
+COCOAPODS: 1.7.2

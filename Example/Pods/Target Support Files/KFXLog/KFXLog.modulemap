@@ -1,0 +1,6 @@
+framework module KFXLog {
+  umbrella header "KFXLog-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module KFXLogUI {
+  umbrella header "KFXLogUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

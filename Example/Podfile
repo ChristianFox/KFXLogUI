@@ -1,9 +1,11 @@
 use_frameworks!
 
-platform :ios, '8.0'
+platform :ios, '8.2'
 
 target 'KFXLogUI_Example' do
   pod 'KFXLogUI', :path => '../'
+	
+	pod 'KFXLog'
 
   target 'KFXLogUI_Tests' do
     inherit! :search_paths

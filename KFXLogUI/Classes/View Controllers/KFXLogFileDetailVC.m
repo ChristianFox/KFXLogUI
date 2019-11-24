@@ -47,7 +47,6 @@
 @property (strong,nonatomic) UIButton *nextResultButton;
 @property (strong,nonatomic) UIButton *previousResultButton;
 @property (strong,nonatomic) UILabel *resultCountLabel;
-@property (strong,nonatomic) NSLayoutConstraint *searchBarOriginY;
 
 @end
 
@@ -181,15 +180,15 @@
                                 @"prevButton":self.previousResultButton,
                                 @"nextButton":self.nextResultButton
                                 };
-    CGFloat searchBarOriginY = 0.0;
-    if (self.navigationController.navigationBar != nil) {
-        searchBarOriginY += self.navigationController.navigationBar.bounds.size.height;
-    }
-    if (![UIApplication sharedApplication].isStatusBarHidden) {
-        searchBarOriginY += 20.0;
-    }
+//    CGFloat searchBarOriginY = 0.0;
+//    if (self.navigationController.navigationBar != nil) {
+//        searchBarOriginY += self.navigationController.navigationBar.bounds.size.height;
+//    }
+//    if (![UIApplication sharedApplication].isStatusBarHidden) {
+//        searchBarOriginY += 20.0;
+//    }
     NSDictionary *metrics = @{
-                              @"searchBarY":@(searchBarOriginY),
+//                              @"searchBarY":@(searchBarOriginY),
                               @"labelHeight":@(30)
                               };
     
@@ -210,18 +209,35 @@
                                                                            options:kNilOptions
                                                                            metrics:metrics
                                                                              views:viewsDict]];
-    
-    // ## Vertical ##
-    self.searchBarOriginY = [NSLayoutConstraint constraintWithItem:self.searchBar
-                                                         attribute:NSLayoutAttributeTop
-                                                         relatedBy:NSLayoutRelationEqual
-                                                            toItem:self.view
-                                                         attribute:NSLayoutAttributeTop
-                                                        multiplier:1.0
-                                                          constant:searchBarOriginY];
-    [self.view addConstraint:self.searchBarOriginY];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[searchBar(50)][resultBar(45)][textView]|"
-                                                                      options:kNilOptions
+	
+	// ## Vertical ##
+	if (@available(iOS 11.0, *)) {
+		[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.searchBar
+															  attribute:NSLayoutAttributeTop
+															  relatedBy:NSLayoutRelationEqual
+																 toItem:self.view.safeAreaLayoutGuide
+															  attribute:NSLayoutAttributeTop
+															 multiplier:1.0
+															   constant:0.0]];
+	} else if (@available(iOS 9.0, *)) {
+		[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.searchBar
+															  attribute:NSLayoutAttributeTop
+															  relatedBy:NSLayoutRelationEqual
+																 toItem:self.view.layoutMarginsGuide
+															  attribute:NSLayoutAttributeTop
+															 multiplier:1.0
+															   constant:0.0]];
+	} else {
+		[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.searchBar
+															  attribute:NSLayoutAttributeTop
+															  relatedBy:NSLayoutRelationEqual
+																 toItem:self.view
+															  attribute:NSLayoutAttributeTop
+															 multiplier:1.0
+															   constant:0.0]];
+	}
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[searchBar(50)][resultBar(45)][textView]|"
+																	  options:kNilOptions
                                                                       metrics:metrics
                                                                         views:viewsDict]];
     [self.resultBar addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[resultLabel]|"
@@ -238,22 +254,22 @@
                                                                         views:viewsDict]];
 }
 
--(void)updateViewConstraints{
-
-    /*
-     Update the constraint for the search bar origin Y based on if there is a status bar and navigation bar visible - keep search bar flush to the top subview
-    */
-    CGFloat searchBarOriginY = 0.0;
-    if (self.navigationController.navigationBar != nil) {
-        searchBarOriginY += self.navigationController.navigationBar.bounds.size.height;
-    }
-    if (![UIApplication sharedApplication].isStatusBarHidden) {
-        searchBarOriginY += 20.0;
-    }
-    self.searchBarOriginY.constant = searchBarOriginY;
-    
-    [super updateViewConstraints];
-}
+//-(void)updateViewConstraints{
+//
+//    /*
+//     Update the constraint for the search bar origin Y based on if there is a status bar and navigation bar visible - keep search bar flush to the top subview
+//    */
+//    CGFloat searchBarOriginY = 0.0;
+//    if (self.navigationController.navigationBar != nil) {
+//        searchBarOriginY += self.navigationController.navigationBar.bounds.size.height;
+//    }
+//    if (![UIApplication sharedApplication].isStatusBarHidden) {
+//        searchBarOriginY += 20.0;
+//    }
+//    self.searchBarOriginY.constant = searchBarOriginY;
+//
+//    [super updateViewConstraints];
+//}
 
 
 
@@ -371,7 +387,7 @@
     }
     
     [self.textView setSelectedRange:NSMakeRange(0, 0)];
-    }
+}
 
 //======================================================
 #pragma mark - ** Protocol Methods **
@@ -540,16 +556,6 @@
         _matchingRanges = [NSMutableArray arrayWithCapacity:100];
     }
     return _matchingRanges;
-}
-
-
-
-
-//======================================================
-#pragma mark - ** Navigation **
-//======================================================
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
 }
 
 

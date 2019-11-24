@@ -1,15 +1,15 @@
 {
   "name": "KFXLogUI",
   "version": "0.1.0",
-  "summary": "A short description of KFXLogUI.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Christian Fox/KFXLogUI",
+  "summary": "KFXLogUI is the UI components for KFXLog.",
+  "description": "UI Classes for displaying log files from [KFXLog](https://github.com/ChristianFox/KFXLog.git)",
+  "homepage": "https://github.com/ChristianFox/KFXLogUI",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Christian Fox": "christianfox890@icloud.com"
+    "Christian Fox": "christianfox@kfxtech.com"
   },
   "source": {
     "git": "https://github.com/Christian Fox/KFXLogUI.git",

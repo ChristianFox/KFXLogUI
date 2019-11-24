@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		30D9E039F0B3AC37A46F3C88 /* Pods_KFXLogUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CADB13F17A985DCBCB6A2A /* Pods_KFXLogUI_Tests.framework */; };
 		33FB96F579D6EDA8DB8D6BFB /* Pods_KFXLogUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473F9DBB78F518376D0A8BB0 /* Pods_KFXLogUI_Example.framework */; };
+		5B86DF6B238A75AF00A8BB59 /* DEMOLogExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86DF63238A75AE00A8BB59 /* DEMOLogExamples.m */; };
+		5B86DF6C238A75AF00A8BB59 /* DEMOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86DF65238A75AE00A8BB59 /* DEMOViewController.m */; };
+		5B86DF6D238A75AF00A8BB59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B86DF67238A75AF00A8BB59 /* Main.storyboard */; };
+		5B86DF6E238A75AF00A8BB59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86DF69238A75AF00A8BB59 /* AppDelegate.m */; };
+		5B86DF6F238A75AF00A8BB59 /* DEMOServiceLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B86DF6A238A75AF00A8BB59 /* DEMOServiceLogger.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* DEMOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* DEMOAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* DEMOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* DEMOViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -23,7 +26,6 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,15 @@
 /* Begin PBXFileReference section */
 		2CF18B119DAF1EB9A7F61E3D /* KFXLogUI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KFXLogUI.podspec; path = ../KFXLogUI.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		473F9DBB78F518376D0A8BB0 /* Pods_KFXLogUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KFXLogUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B86DF62238A75AE00A8BB59 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5B86DF63238A75AE00A8BB59 /* DEMOLogExamples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOLogExamples.m; sourceTree = "<group>"; };
+		5B86DF64238A75AE00A8BB59 /* DEMOServiceLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOServiceLogger.h; sourceTree = "<group>"; };
+		5B86DF65238A75AE00A8BB59 /* DEMOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOViewController.m; sourceTree = "<group>"; };
+		5B86DF66238A75AF00A8BB59 /* DEMOLogExamples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOLogExamples.h; sourceTree = "<group>"; };
+		5B86DF67238A75AF00A8BB59 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5B86DF68238A75AF00A8BB59 /* DEMOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMOViewController.h; sourceTree = "<group>"; };
+		5B86DF69238A75AF00A8BB59 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5B86DF6A238A75AF00A8BB59 /* DEMOServiceLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMOServiceLogger.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* KFXLogUI_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KFXLogUI_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,10 +58,6 @@
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* KFXLogUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KFXLogUI-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* DEMOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMOAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* DEMOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DEMOAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* DEMOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEMOViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* DEMOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DEMOViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* KFXLogUI_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KFXLogUI_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -60,7 +67,6 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8521A4939B144FD3A7CD2FB0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A1522ADAEB4201D1C0C9E6D /* Pods-KFXLogUI_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KFXLogUI_Example.release.xcconfig"; path = "Target Support Files/Pods-KFXLogUI_Example/Pods-KFXLogUI_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A113A38DADEFF27FF1F2405D /* Pods-KFXLogUI_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KFXLogUI_Example.debug.xcconfig"; path = "Target Support Files/Pods-KFXLogUI_Example/Pods-KFXLogUI_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A8BF7C866C9BD5976B27A96B /* Pods-KFXLogUI_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KFXLogUI_Tests.debug.xcconfig"; path = "Target Support Files/Pods-KFXLogUI_Tests/Pods-KFXLogUI_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,12 +149,16 @@
 		6003F593195388D20070C39A /* Example for KFXLogUI */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* DEMOAppDelegate.h */,
-				6003F59D195388D20070C39A /* DEMOAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* DEMOViewController.h */,
-				6003F5A6195388D20070C39A /* DEMOViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				5B86DF62238A75AE00A8BB59 /* AppDelegate.h */,
+				5B86DF69238A75AF00A8BB59 /* AppDelegate.m */,
+				5B86DF66238A75AF00A8BB59 /* DEMOLogExamples.h */,
+				5B86DF63238A75AE00A8BB59 /* DEMOLogExamples.m */,
+				5B86DF64238A75AE00A8BB59 /* DEMOServiceLogger.h */,
+				5B86DF6A238A75AF00A8BB59 /* DEMOServiceLogger.m */,
+				5B86DF68238A75AF00A8BB59 /* DEMOViewController.h */,
+				5B86DF65238A75AE00A8BB59 /* DEMOViewController.m */,
+				5B86DF67238A75AF00A8BB59 /* Main.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -277,10 +287,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				5B86DF6D238A75AF00A8BB59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,8 +376,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F59E195388D20070C39A /* DEMOAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* DEMOViewController.m in Sources */,
+				5B86DF6F238A75AF00A8BB59 /* DEMOServiceLogger.m in Sources */,
+				5B86DF6E238A75AF00A8BB59 /* AppDelegate.m in Sources */,
+				5B86DF6B238A75AF00A8BB59 /* DEMOLogExamples.m in Sources */,
+				5B86DF6C238A75AF00A8BB59 /* DEMOViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

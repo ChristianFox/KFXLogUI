@@ -1,24 +1,28 @@
 PODS:
-  - KFXLog (1.5.0)
+  - KFXLog (2.0.0)
   - KFXLogUI (0.1.0):
     - KFXLog
 
 DEPENDENCIES:
-  - KFXLog
+  - KFXLog (from `https://github.com/ChristianFox/KFXLog.git`, branch `feature/moveUIIntoNewPod`)
   - KFXLogUI (from `../`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - KFXLog
-
 EXTERNAL SOURCES:
+  KFXLog:
+    :branch: feature/moveUIIntoNewPod
+    :git: https://github.com/ChristianFox/KFXLog.git
   KFXLogUI:
     :path: "../"
 
-SPEC CHECKSUMS:
-  KFXLog: 5f7caa83fd3f8d1f404190dd5666963eb46bf56a
-  KFXLogUI: 174a343aef33e0f9ae93234581dc2df3bc5b1c5b
+CHECKOUT OPTIONS:
+  KFXLog:
+    :commit: e7a2d96943d8b5f21b342a33cad257e608c890a1
+    :git: https://github.com/ChristianFox/KFXLog.git
 
-PODFILE CHECKSUM: 5238307b46159185e0f8ca4f8a20c650376ef300
+SPEC CHECKSUMS:
+  KFXLog: 9b63fedeae0e49f21a45813fcf130090d8d3ee29
+  KFXLogUI: 378c5e9355ed1e3140753bbe4c684fe276203c5e
+
+PODFILE CHECKSUM: 7db1076d65d7ee983a72a7aeb9b8a06bad052e97
 
 COCOAPODS: 1.7.2

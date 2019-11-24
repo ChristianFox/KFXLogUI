@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "KFXLogFileTVCell.h"
+#import "KFXLogFileDetailVC.h"
+#import "KFXLogFilesMasterTVC.h"
 
 FOUNDATION_EXPORT double KFXLogUIVersionNumber;
 FOUNDATION_EXPORT const unsigned char KFXLogUIVersionString[];

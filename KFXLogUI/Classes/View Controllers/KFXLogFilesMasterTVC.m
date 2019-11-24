@@ -35,10 +35,10 @@
 // VCs
 #import "KFXLogFileDetailVC.h"
 // Cells
-#import "KFXLogFileTVCell.h"
+#import <KFXLogUI/KFXLogFileTVCell.h>
 
 @interface KFXLogFilesMasterTVC ()
-@property (strong,nonatomic) NSArray *tableData;
+@property (strong,nonatomic) NSMutableArray<NSString *> *tableData;
 
 @end
 
@@ -143,8 +143,49 @@
 
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSString *alertTitle = NSLocalizedString(@"Warning", nil);
+        NSString *alertMessage = NSLocalizedString(@"Are you sure you want to delete this log file?", nil);
+        NSString *yesActionTitle = NSLocalizedString(@"Yes", nil);
+        NSString *noActionTitle = NSLocalizedString(@"No", @"Denial of certain action");
+
+        UIAlertController *deleteAlert = [UIAlertController alertControllerWithTitle: alertTitle message: alertMessage preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:yesActionTitle style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+
+            // Work out file path of log file
+            KFXFileLogDescriptor *fileLogDescriptor = [KFXLogConfigurator sharedConfigurator].fileLogDescriptor;
+            NSString *fileName = self.tableData[indexPath.row];
+            NSString *filePath = [fileLogDescriptor.directoryPath stringByAppendingPathComponent:fileName];
+
+            // Delete the file
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            NSError *deleteFileError = nil;
+            [fileManager removeItemAtPath:filePath error:&deleteFileError];
+
+            if (deleteFileError == nil) {
+                [self.tableData removeObjectAtIndex:indexPath.row];
+                [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+
+        }];
+
+        [deleteAlert addAction:yesAction];
+        [deleteAlert addAction:[UIAlertAction actionWithTitle: noActionTitle style: UIAlertActionStyleCancel handler:nil]];
+
+        [self presentViewController:deleteAlert animated:YES completion:nil];
+    }
+}
 
 //======================================================
 #pragma mark - ** Private Methods **
@@ -152,7 +193,7 @@
 //--------------------------------------------------------
 #pragma mark - Configure
 //--------------------------------------------------------
--(void)configureTableView{
+- (void)configureTableView {
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100.0f;
@@ -166,7 +207,7 @@
 //--------------------------------------------------------
 #pragma mark - Lazy Load
 //--------------------------------------------------------
--(NSArray *)tableData{
+- (NSMutableArray<NSString *> *)tableData {
     if (!_tableData) {
         
         NSFileManager *fileMan = [NSFileManager defaultManager];
@@ -183,29 +224,17 @@
                         [KFXLog logError:error sender:self];
                     }
                 }else{
-                    
-                    NSMutableArray *mutContents = [NSMutableArray arrayWithCapacity:contents.count ];
-                    
-                    for (NSString *fileName in contents.reverseObjectEnumerator.allObjects) {
-                        if (![fileName containsString:@"sqlite"]) {
-                            [mutContents addObject:fileName];
-                        }
-                    }
-                    
-                    _tableData = [mutContents copy];
+
+                  contents = [contents sortedArrayUsingSelector:@selector(compare:)];
+                  _tableData = [contents.reverseObjectEnumerator.allObjects mutableCopy];
                 }
             }
-        }else{
+        } else {
             [KFXLog logFail:@"No directory found for file logs at path : %@",fileLogDescriptor.directoryPath];
         }
-        
-        
     }
     return _tableData;
 }
-
-
-
 
 //======================================================
 #pragma mark - ** Navigation **

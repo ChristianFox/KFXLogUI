@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 	s.homepage         = 'https://github.com/ChristianFox/KFXLogUI'
 	s.license          = { :type => 'MIT', :file => 'LICENSE' }
 	s.author           = { 'Christian Fox' => 'christianfox@kfxtech.com' }
-	s.source           = { :git => 'https://github.com/Christian Fox/KFXLogUI.git', :tag => s.version.to_s }
+	s.source           = { :git => 'https://github.com/ChristianFox/KFXLogUI.git', :tag => s.version.to_s }
 	
 	s.ios.deployment_target = '8.2'
 	

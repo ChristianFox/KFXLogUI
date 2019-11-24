@@ -5,7 +5,7 @@ platform :ios, '8.2'
 target 'KFXLogUI_Example' do
   pod 'KFXLogUI', :path => '../'
 	
-  pod 'KFXLog', :git => 'https://github.com/ChristianFox/KFXLog.git', :branch => 'feature/moveUIIntoNewPod'
+  pod 'KFXLog'
 
   target 'KFXLogUI_Tests' do
     inherit! :search_paths

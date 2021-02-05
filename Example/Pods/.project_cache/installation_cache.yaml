@@ -1,0 +1,42 @@
+BUILD_CONFIGURATIONS:
+  Debug: :debug
+  Release: :release
+CACHE_KEYS:
+  KFXLog:
+    BUILD_SETTINGS_CHECKSUM:
+      KFXLog:
+        :debug: 5b40e419d55125dd0be4c496c9e0e92f
+        :release: 5b40e419d55125dd0be4c496c9e0e92f
+    CHECKSUM: 90ec34b40b199d9e4c56d6e5ae89655e0756b250
+    PROJECT_NAME: KFXLog
+    SPECS:
+      - KFXLog (2.0.1)
+  KFXLogUI:
+    BUILD_SETTINGS_CHECKSUM:
+      KFXLogUI:
+        :debug: 94b046cd5c88d2a9fc467c86f2c533ba
+        :release: 94b046cd5c88d2a9fc467c86f2c533ba
+    CHECKSUM: a4f61d209c9281a7f5569495984f66442d34d2db
+    FILES:
+      - "../../KFXLogUI/Classes/Table Cells/KFXLogFileTVCell.h"
+      - "../../KFXLogUI/Classes/Table Cells/KFXLogFileTVCell.m"
+      - "../../KFXLogUI/Classes/View Controllers/KFXLogFileDetailVC.h"
+      - "../../KFXLogUI/Classes/View Controllers/KFXLogFileDetailVC.m"
+      - "../../KFXLogUI/Classes/View Controllers/KFXLogFilesMasterTVC.h"
+      - "../../KFXLogUI/Classes/View Controllers/KFXLogFilesMasterTVC.m"
+      - "../../LICENSE"
+      - "../../README.md"
+    PROJECT_NAME: KFXLogUI
+    SPECS:
+      - KFXLogUI (0.2.0)
+  Pods-KFXLogUI_Example:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 4b372ebe319ede06db37e93482deb49f
+      Release: 4b372ebe319ede06db37e93482deb49f
+  Pods-KFXLogUI_Tests:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 50b4e54db16d77701d029673578177a0
+      Release: 50b4e54db16d77701d029673578177a0
+OBJECT_VERSION: 46
+PLUGINS:
+  {}

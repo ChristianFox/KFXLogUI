@@ -1,6 +1,6 @@
 {
   "name": "KFXLogUI",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "KFXLogUI is the UI components for KFXLog.",
   "description": "UI Classes for displaying log files from [KFXLog](https://github.com/ChristianFox/KFXLog.git)",
   "homepage": "https://github.com/ChristianFox/KFXLogUI",
@@ -12,8 +12,8 @@
     "Christian Fox": "christianfox@kfxtech.com"
   },
   "source": {
-    "git": "https://github.com/Christian Fox/KFXLogUI.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/ChristianFox/KFXLogUI.git",
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.2"

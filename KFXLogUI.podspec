@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
 	s.name             = 'KFXLogUI'
-	s.version          = '0.1.0'
+	s.version          = '0.2.0'
 	s.summary          = 'KFXLogUI is the UI components for KFXLog. '
 	
 	s.description      = <<-DESC
